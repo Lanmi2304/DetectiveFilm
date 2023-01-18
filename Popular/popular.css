@@ -1,0 +1,537 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(1, 1, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(1, 1, 0, 1) 0%,
+    #6600cc 49%,
+    rgba(1, 1, 0, 1) 87%
+  );
+
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.text {
+  text-transform: uppercase;
+}
+
+.nav-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 30px;
+  display: none;
+}
+
+.open-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: #b366ff;
+  z-index: 10;
+  display: none;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  /*transform: translateX(-100%);*/
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-bg {
+  background-color: #1a082b; /* U MEDIA QUERY STAVI U CRNU */
+  width: 100%;
+  /* padding: 40px;*/
+  position: relative;
+  transition-delay: 0s;
+  display: flex;
+  justify-content: center;
+}
+
+.close-btn {
+  opacity: 0.3;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  color: white;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list li {
+  margin: 0 1.5rem;
+}
+
+.list li a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  transition: 0.2s all ease;
+}
+.list li a:hover {
+  color: #b366ff;
+  transform: scale(1.2);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.movie {
+  width: 300px;
+  margin: 1rem;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  transition: all ease 0.2s;
+}
+.movie:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.movie img {
+  width: 100%;
+}
+.movie-info {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+}
+.movie-info h3 {
+  margin-top: 0;
+}
+
+.movie-info span {
+  background-color: black;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.movie-info span.green {
+  color: lightgreen;
+}
+.movie-info span.orange {
+  color: orange;
+}
+.movie-info span.red {
+  color: red;
+}
+
+.overview {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.3s ease-in;
+}
+.movie:hover .overview {
+  transform: translateY(0);
+}
+.modal-wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  overflow: none;
+}
+.modal {
+  background-color: black;
+  position: fixed;
+  display: none;
+  overflow: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+.modal .modal-info {
+  width: 70%;
+  height: 80%;
+  margin-top: 30px;
+  background-color: #1a1a1a;
+  position: absolute;
+  opacity: 1 !important;
+  z-index: 12;
+  display: flex;
+  overflow: none;
+}
+.modal-info h2 {
+  color: #b366ff;
+}
+.modal-info .modal-img {
+  flex-basis: 35%;
+  max-height: 100%;
+}
+.modal-info span {
+  background-color: #404040;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.modal-info .green {
+  color: lightgreen;
+}
+.modal-info .modal-img img {
+  width: 100%;
+  height: 100%;
+}
+.modal-info .modal-movie-info {
+  flex-basis: 65%;
+  padding: 50px;
+}
+.modal-info .modal-movie-info p {
+  padding: 50px 20px 100px 0px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+.modal-info .modal-movie-info .imdb-rate {
+  float: right;
+}
+.modal-movie-info span.green {
+  color: lightgreen;
+}
+.modal-movie-info span.orange {
+  color: orange;
+}
+.modal-movie-info span.red {
+  color: red;
+}
+.modal-info .close-modal {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b366ff;
+  position: absolute;
+  top: -20px;
+  right: -15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 2000000 !important;
+  transition: all ease 0.2s;
+}
+.modal-info .close-modal:hover {
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid #b366ff;
+}
+.modal-info #close-icon {
+  color: white;
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+
+.hero {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(https://images.hdqwalls.com/download/avengers-end-game-4k-banner-cb-1920x1080.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
+}
+.hero h1 {
+  color: #d9b3ff;
+  position: absolute;
+  top: 40%;
+  left: 50px;
+  width: 40%;
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+}
+.hero form {
+  position: absolute;
+  top: 60%;
+  left: 100px;
+}
+main h1 {
+  margin: 140px auto;
+  display: block;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  text-align: center;
+}
+main #formAfter {
+  margin: 0 auto;
+}
+
+main #searchAfter {
+  display: block;
+  background-color: transparent;
+  width: 400px;
+  color: #cc99ff;
+  height: 30px;
+  border: 2px solid #cc99ff;
+  border-radius: 10px;
+  margin-top: -100px;
+}
+.hero .search {
+  width: 500px;
+  background-color: transparent;
+  color: #cc99ff;
+  height: 50px;
+  font-size: 1.2rem;
+  border: 3px solid #cc99ff;
+  border-radius: 10px;
+}
+.hero form:focus .search {
+  border: 5px solid white;
+  background-color: #cc99ff;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
+  z-index: 6;
+  background-image: url(./../images/bgImage.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+footer .productionIcon {
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+footer .productionIcon img {
+  width: 120px;
+}
+footer .productionIcon:hover {
+  transition: 0.1s ease;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@media all and (max-width: 1000px) {
+  .nav-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  .open-btn {
+    display: block;
+  }
+  .close-btn {
+    display: block;
+  }
+  .nav-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 30px;
+  }
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 100;
+    flex-direction: row;
+    transform: translateX(-100%);
+    font-family: "Poppins", sans-serif;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav.visible {
+    transform: translateX(0);
+  }
+
+  .nav-black {
+    background-color: rgb(34, 31, 31);
+    width: 60%;
+    max-width: 480px;
+    min-width: 320px;
+    transition-delay: 0.4s;
+  }
+
+  .nav-black.visible {
+    transition-delay: 0s;
+  }
+
+  .nav-purple {
+    background-color: #b366ff;
+    width: 95%;
+    transition-delay: 0.2s;
+  }
+
+  .nav-purple.visible {
+    transition-delay: 0.2s;
+  }
+
+  .nav-bg {
+    background-color: black;
+    width: 95%;
+    padding: 40px;
+    position: relative;
+    transition-delay: 0s;
+  }
+
+  .nav-bg.visible {
+    transition-delay: 0.4s;
+  }
+
+  .close-btn {
+    opacity: 0.3;
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    color: white;
+  }
+
+  .list {
+    list-style-type: none;
+    padding: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .list li {
+    margin: 20px 0;
+  }
+
+  .list li a {
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .list ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+}
+@media all and (max-width: 1300px) {
+  #form {
+    margin-top: 100px;
+  }
+  .hrero {
+    background-position: cover;
+  }
+}
+@media all and (max-width: 1000px) {
+  .hero > h1 {
+    font-size: 2rem;
+    position: relative;
+    margin: auto;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .hero form {
+    position: relative;
+    left: 0;
+    top: 30%;
+    text-align: center;
+  }
+  #form #search {
+    max-width: 400px;
+  }
+}
+
+@media all and (max-width: 780px) {
+  .modal {
+    overflow: scroll;
+  }
+  .modal.modal-info {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    max-height: 450px;
+    margin-top: -100px;
+    /*position: absolute;
+    top: -45px;*/
+  }
+  .modal-info .modal-img {
+    max-height: 100%;
+  }
+  .modal-info .modal-movie-info {
+    padding: 20px;
+  }
+  .modal-info .modal-movie-info p {
+    padding: 0;
+    font-size: 0.9rem;
+  }
+}
+@media all and (max-width: 420px) {
+  #form #search {
+    max-width: 300px;
+  }
+  #formAfter #searchAfter {
+    max-width: 300px;
+  }
+}
+
+@media all and (min-width: 50px) and (max-width: 349px) {
+  .container .movie {
+    width: 100%;
+  }
+  #search {
+    width: 100%;
+  }
+  #formAfter #searchAfter {
+    width: 100%;
+  }
+  main h1 {
+    font-size: 24px;
+  }
+}

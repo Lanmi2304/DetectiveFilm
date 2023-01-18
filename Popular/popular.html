@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popular</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="./../images/film.png" />
+    <link rel="stylesheet" href="./../css/style.css" />
+  </head>
+  <body>
+    <button class="nav-btn open-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="nav nav-black">
+      <div class="nav nav-purple">
+        <div class="nav nav-bg">
+          <button class="nav-btn close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <ul class="list">
+            <li><a href="./../index.html" id="home">Home</a></li>
+            <li>
+              <a href="./../Popular/popular.html" id="popular">Popular</a>
+            </li>
+            <li><a href="./../Kids/kids.html" id="kids">Kids</a></li>
+            <li>
+              <a href="./../Highest/highest.html" id="highestRated"
+                >Highest Rated</a
+              >
+            </li>
+            <li><a href="./../contact/contact.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bannerPopular">
+      <div class="bannerPopularText">
+        <p>get brief information about the latest and most popular movies!</p>
+      </div>
+    </div>
+    <main id="main">
+      <div class="container"></div>
+      <div class="modal-wrapper"></div>
+      <div class="modal"></div>
+    </main>
+
+    <footer>
+      <div class="productionIcon">
+        <img src="./../images/cartonNetwork.webp" alt="" />
+      </div>
+      <div class="productionIcon">
+        <img src="./../images/hboLogo.webp" alt="" />
+      </div>
+      <div class="productionIcon">
+        <img src="./../images/wB.webp" alt="" />
+      </div>
+      <div class="productionIcon">
+        <img src="./../images/dC.webp" alt="" />
+      </div>
+      <div class="idk">
+        <h3>Website by Milan Pavlovic | IT Academy 2023</h3>
+        <form>
+          <p>Stay in touch</p>
+          <label for="">Your email:</label>
+          <input type="email" placeholder="example@address.com" />
+          <button>Submit</button>
+        </form>
+      </div>
+    </footer>
+    <script src="popular.js"></script>
+  </body>
+</html>

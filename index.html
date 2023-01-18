@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" href="/images/film.png" />
+
+    <title>DetectiveFilm</title>
+  </head>
+
+  <body>
+    <button class="nav-btn open-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="nav nav-black">
+      <div class="nav nav-purple">
+        <div class="nav nav-bg">
+          <button class="nav-btn close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+
+          <ul class="list">
+            <li><a href="#" id="home">Home</a></li>
+            <li><a href="./Popular/popular.html" id="popular">Popular</a></li>
+            <li><a href="./Kids/kids.html" id="kids">Kids</a></li>
+            <li>
+              <a href="./Highest/highest.html" id="highestRated"
+                >Highest Rated</a
+              >
+            </li>
+            <li>
+              <a href="./contact/contact.html">Contact Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h1>search for the movie and get brief information about it!</h1>
+      <form id="form" class="form">
+        <input
+          type="text"
+          id="search"
+          class="search"
+          placeholder="Search
+            "
+        />
+      </form>
+    </div>
+    <main id="main">
+      <h1>Search for the movie</h1>
+      <form id="formAfter" class="form">
+        <input
+          type="text"
+          id="searchAfter"
+          class="search"
+          placeholder="Search
+            "
+        />
+      </form>
+      <div class="container"></div>
+      <div class="modal-wrapper"></div>
+      <div class="modal"></div>
+    </main>
+
+    <footer>
+      <div class="productionIcon">
+        <img src="./images/cartonNetwork.webp" alt="" />
+      </div>
+      <div class="productionIcon">
+        <img src="./images/hboLogo.webp" alt="" />
+      </div>
+      <div class="productionIcon">
+        <img src="./images/wB.webp" alt="" />
+      </div>
+      <div class="productionIcon">
+        <img src="./images/dC.webp" alt="" />
+      </div>
+      <div class="idk">
+        <h3>Website by Milan Pavlovic | IT Academy 2023</h3>
+        <form>
+          <p>Stay in touch</p>
+          <label for="">Your email:</label>
+          <input type="email" placeholder="example@address.com" />
+          <button>Submit</button>
+        </form>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
